@@ -18,7 +18,7 @@ resource "aws_autoscaling_group" "webapp_asg" {
   force_delete = true
   launch_configuration = "${var.webapp_lc_id}"
   load_balancers = ["${var.webapp_elb_name}"]
-  tag = {
+  tags = {
     key = "Name"
     value = "terraform_asg"
     propagate_at_launch = "true"
