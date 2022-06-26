@@ -28,13 +28,13 @@ module "load_balancers" {
   public_subnet_id = "${module.site.public_subnet_id}"
   webapp_http_inbound_sg_id = "${module.site.webapp_http_inbound_sg_id}"
 }
-module "autoscaling_groups" {
-  source = "./autoscaling_groups"
-  public_subnet_id = "${module.site.public_subnet_id}"
-  webapp_lc_id = "${module.launch_configurations.webapp_lc_id}"
-  webapp_lc_name = "${module.launch_configurations.webapp_lc_name}"
-  webapp_elb_name = "${module.load_balancers.webapp_elb_name}"
-}
+#module "autoscaling_groups" {
+ # source = "./autoscaling_groups"
+#  public_subnet_id = "${module.site.public_subnet_id}"
+ # webapp_lc_id = "${module.launch_configurations.webapp_lc_id}"
+ # webapp_lc_name = "${module.launch_configurations.webapp_lc_name}"
+#  webapp_elb_name = "${module.load_balancers.webapp_elb_name}"
+#}
 module "instances" {
   source = "./instances"
   public_subnet_id = "${module.site.public_subnet_id}"
