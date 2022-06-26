@@ -19,8 +19,8 @@ resource "aws_autoscaling_group" "webapp_asg" {
   launch_configuration = "${var.webapp_lc_id}"
   load_balancers = ["${var.webapp_elb_name}"]
   tags = map(
-    key = "Name"
-    value = "terraform_asg"
+    key = "Name",
+    value = "terraform_asg",
     propagate_at_launch = "true"
   )
 }
